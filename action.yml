@@ -1,0 +1,20 @@
+name: "Create Torrents for Release Assets"
+description: "Generates torrent files for GitHub release assets."
+inputs:
+  github_token:
+    description: "GitHub token for API access"
+    required: true
+  files:
+    description: "List of files to create torrents for. One per line. Globs allowed."
+    required: true
+  onefile:
+    description: "Create a single torrent containing all files. If false, every locally matched file gets a corresponding .torrent."
+    required: false
+    default: "false"
+  local:
+    description: "By default, files are searched locally. If set to false, then all other inputs are ignored, assets are downloaded from the corresponding release, a .torrent is generated for each and added to release assets."
+    required: false
+    default: "true"
+runs:
+  using: "node20"
+  main: "dist/index.js"
