@@ -8,7 +8,7 @@ import createTorrent from "create-torrent";
 import fs from "fs";
 import { globSync } from "glob";
 
-const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+const octokit = new Octokit({ auth: process.env.INPUT_TOKEN });
 
 async function downloadFile(owner: string, repo: string, asset_id: number, outputPath: string): Promise<void> {
     const asset = await octokit.rest.repos.getReleaseAsset({
@@ -46,7 +46,7 @@ async function uploadFileToRelease(owner: string, repo: string, releaseId: numbe
         headers: {
             "Content-Type": "application/octet-stream",
             "Content-Length": contentLength.toString(),
-            "Authorization": `Bearer ${process.env.INPUT_GITHUB_TOKEN}`,
+            "Authorization": `Bearer ${process.env.INPUT_TOKEN}`,
             "Accept": "application/vnd.github+json",
             "X-GitHub-Api-Version": "2022-11-28",
         },

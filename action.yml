@@ -1,7 +1,7 @@
-name: "Create Torrents for Release Assets"
-description: "Generates torrent files for GitHub release assets."
+name: "Torrent release assets"
+description: "Generate and publish torrent files for GitHub release assets."
 inputs:
-  github_token:
+  token:
     description: "GitHub token for API access"
     required: true
   files:

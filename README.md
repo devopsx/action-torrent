@@ -1,4 +1,4 @@
-# action-release-torrent
+# action-torrent-release
 
 This GitHub action allows you to generate and publish torrent files for your release assets. Useful when the files are large. Initial seeding is performed using corresponding GitHub release assets as webseeds.
 
@@ -41,9 +41,9 @@ jobs:
 
         # Create torrents first
       - name: Create torrents
-        uses: devopsx/action-release-torrent@v1
+        uses: devopsx/action-torrent-release@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             dist/index.js
             src/*
@@ -99,8 +99,8 @@ jobs:
 
         # Download release assets, create and upload a torrent file for each one
       - name: Release torrents
-        uses: devopsx/action-release-torrent@v1
+        uses: devopsx/action-torrent-release@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           local: false
 ```

@@ -15,9 +15,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create torrents
-        uses: devopsx/action-release-torrent@v1
+        uses: devopsx/action-torrent-release@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           files: |
             dist/index.js
             src/*
