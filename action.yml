@@ -1,4 +1,4 @@
-name: "Torrent release assets"
+name: "Torrent Action"
 description: "Generate and publish torrent files for GitHub release assets."
 inputs:
   token:
