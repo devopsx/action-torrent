@@ -9,6 +9,8 @@ There are two modes, [local](#local) and [remote](#remote).
 - In local mode, you will specify which files need torrents generated. This works faster as there's less upload/download involved.
 - In remote mode, every generated asset gets a corresponding torrent file. Parameters `files` and `onefile` are ignored.
 
+Parameters
+
 | name      | default              | description                                                        |
 | --------- | -------------------- | ------------------------------------------------------------------ |
 | `token`   | required             | Set to `${{ secrets.GITHUB_TOKEN }}`                               |
