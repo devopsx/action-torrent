@@ -33715,7 +33715,7 @@ var glob = Object.assign(glob_, {
 glob.glob = glob;
 
 // src/index.ts
-var octokit = new Octokit2({ auth: process.env.GITHUB_TOKEN });
+var octokit = new Octokit2({ auth: process.env.INPUT_TOKEN });
 async function downloadFile(owner, repo, asset_id, outputPath) {
   const asset = await octokit.rest.repos.getReleaseAsset({
     owner,
@@ -33747,7 +33747,7 @@ async function uploadFileToRelease(owner, repo, releaseId, filePath) {
     headers: {
       "Content-Type": "application/octet-stream",
       "Content-Length": contentLength.toString(),
-      "Authorization": `Bearer ${process.env.INPUT_GITHUB_TOKEN}`,
+      "Authorization": `Bearer ${process.env.INPUT_TOKEN}`,
       "Accept": "application/vnd.github+json",
       "X-GitHub-Api-Version": "2022-11-28"
     }
@@ -33760,18 +33760,18 @@ async function uploadFileToRelease(owner, repo, releaseId, filePath) {
 async function createTorrentFile(filePaths, outputFileName, webSeeds) {
   const torrentPath = (0, import_node_path2.join)("./torrents", outputFileName);
   const trackers = [
-    "udp://tracker.openbittorrent.com:80/announce",
-    "udp://tracker.opentrackr.org:1337/announce",
     "udp://9.rarbg.to:2710/announce",
+    "udp://explodie.org:6969",
+    "udp://exodus.desync.com:6969/announce",
+    "udp://tracker.coppersurfer.tk:6969",
+    "udp://tracker.cyberia.is:6969/announce",
+    "udp://tracker.empire-js.us:1337",
     "udp://tracker.internetwarriors.net:1337/announce",
     "udp://tracker.leechers-paradise.org:6969",
-    "udp://tracker.coppersurfer.tk:6969",
-    "udp://exodus.desync.com:6969/announce",
+    "udp://tracker.openbittorrent.com:80/announce",
+    "udp://tracker.opentrackr.org:1337/announce",
     "udp://tracker.pirateparty.gr:6969/announce",
-    "udp://tracker.cyberia.is:6969/announce",
-    "udp://tracker.tiny-vps.com:6969/announce",
-    "udp://explodie.org:6969",
-    "udp://tracker.empire-js.us:1337"
+    "udp://tracker.tiny-vps.com:6969/announce"
   ];
   const torrentOptions = {
     urlList: webSeeds,
