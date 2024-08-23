@@ -124,7 +124,7 @@ async function processLocalAssets(): Promise<void> {
             }
 
             for (const filePath of matchedFiles) {
-                const outputFileName = `${basename(filePath)}-${tagName}.torrent`;
+                const outputFileName = `${basename(filePath)}.torrent`;
                 const webSeed = `https://github.com/${owner}/${repo}/releases/download/${tagName}/${basename(filePath)}`;
                 await createTorrentFile([filePath], outputFileName, [webSeed]);
             }

@@ -33814,7 +33814,7 @@ async function processLocalAssets() {
         throw new Error(`No files matched the pattern: ${pattern}`);
       }
       for (const filePath of matchedFiles) {
-        const outputFileName = `${(0, import_node_path2.basename)(filePath)}-${tagName}.torrent`;
+        const outputFileName = `${(0, import_node_path2.basename)(filePath)}.torrent`;
         const webSeed = `https://github.com/${owner}/${repo}/releases/download/${tagName}/${(0, import_node_path2.basename)(filePath)}`;
         await createTorrentFile([filePath], outputFileName, [webSeed]);
       }
