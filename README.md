@@ -9,12 +9,12 @@ There are two modes, [local](#local) and [remote](#remote).
 - In local mode, you will specify which files need torrents generated. This works faster as there's less upload/download involved.
 - In remote mode, every generated asset gets a corresponding torrent file. Parameters `files` and `onefile` are ignored.
 
-| name      | default  | description                                                        |
-| --------- | -------- | ------------------------------------------------------------------ |
-| `token`   | required | Set to `${{ secrets.GITHUB_TOKEN }}`                               |
-| `files`   | required | List of files to create torrents for. One per line, globs allowed. |
-| `onefile` | `false`  | Create a single torrent containing all listed `files`.             |
-| `local`   | `true`   | Search files locally or download existing release assets.          |
+| name      | default              | description                                                        |
+| --------- | -------------------- | ------------------------------------------------------------------ |
+| `token`   | required             | Set to `${{ secrets.GITHUB_TOKEN }}`                               |
+| `local`   | `true`               | Search files locally or download existing release assets.          |
+| `files`   | required, if `local` | List of files to create torrents for. One per line, globs allowed. |
+| `onefile` | `false`              | Create a single torrent containing all listed `files`.             |
 
 ### Local
 
@@ -63,7 +63,7 @@ jobs:
 
 ### Remote
 
-Release is generated first, then every assets is downloaded, a corresponding torrent file is created and uploaded. Parameters `files` and `onefile` are ignored.
+The release is generated first, then every asset is downloaded, a corresponding torrent file is created and uploaded. Parameters `files` and `onefile` are ignored.
 
 This is a bit slower, as there's an extra download cycle, but may be preferable in some use cases.
 
@@ -104,3 +104,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           local: false
 ```
+
+## P.S.
+
+I would add magnet links, but GitHub doesn't render them.
+
+## P.P.S.
+
+GitHub/Microsoft, if you'd like to thank me for the gazillibytes of traffic saved, you have my contact info :).
