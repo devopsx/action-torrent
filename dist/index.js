@@ -33760,18 +33760,26 @@ async function uploadFileToRelease(owner, repo, releaseId, filePath) {
 async function createTorrentFile(filePaths, outputFileName, webSeeds) {
   const torrentPath = (0, import_node_path2.join)("./torrents", outputFileName);
   const trackers = [
-    "udp://9.rarbg.to:2710/announce",
-    "udp://explodie.org:6969",
-    "udp://exodus.desync.com:6969/announce",
-    "udp://tracker.coppersurfer.tk:6969",
-    "udp://tracker.cyberia.is:6969/announce",
-    "udp://tracker.empire-js.us:1337",
-    "udp://tracker.internetwarriors.net:1337/announce",
-    "udp://tracker.leechers-paradise.org:6969",
-    "udp://tracker.openbittorrent.com:80/announce",
     "udp://tracker.opentrackr.org:1337/announce",
-    "udp://tracker.pirateparty.gr:6969/announce",
-    "udp://tracker.tiny-vps.com:6969/announce"
+    "udp://open.tracker.cl:1337/announce",
+    "udp://open.demonii.com:1337/announce",
+    "udp://open.stealth.si:80/announce",
+    "udp://tracker.torrent.eu.org:451/announce",
+    "udp://tracker-udp.gbitt.info:80/announce",
+    "udp://explodie.org:6969/announce",
+    "udp://exodus.desync.com:6969/announce",
+    "https://tracker.tamersunion.org:443/announce",
+    "http://tracker1.bt.moack.co.kr:80/announce",
+    "udp://tracker.tiny-vps.com:6969/announce",
+    "udp://tracker.bittor.pw:1337/announce",
+    "udp://opentracker.io:6969/announce",
+    "udp://new-line.net:6969/announce",
+    "udp://bt2.archive.org:6969/announce",
+    "udp://bt1.archive.org:6969/announce",
+    "http://tracker2.dler.org:80/announce",
+    "udp://wepzone.net:6969/announce",
+    "udp://ttk2.nbaonlineservice.com:6969/announce",
+    "udp://tracker1.myporn.club:9337/announce"
   ];
   const torrentOptions = {
     urlList: webSeeds,
