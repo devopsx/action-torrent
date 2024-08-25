@@ -63,6 +63,8 @@ jobs:
             torrents/*
 ```
 
+Make sure to include all the same files into the actual release, this is required for the initial web seeding.
+
 ### Remote
 
 The release is generated first, then every asset is downloaded, a corresponding torrent file is created and uploaded. Parameters `files` and `onefile` are ignored.
