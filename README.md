@@ -1,6 +1,6 @@
 # Torrent Action
 
-This GitHub action allows you to generate and publish torrent files for your release assets. Useful when the files are large. Initial seeding is performed using corresponding GitHub release assets as webseeds.
+This GitHub action allows you to generate and publish torrent files for your release assets, which is useful when the files are large. Initial seeding is performed using the corresponding GitHub release assets as webseeds.
 
 ## Usage
 
@@ -20,7 +20,7 @@ Parameters
 
 ### Local
 
-Files are searched locally, torrents are generated for them, and then everything is uploaded together.
+Files are searched locally, torrents are generated for them, and then everything is released together.
 
 Example
 
